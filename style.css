@@ -10,7 +10,7 @@ body {
 
 /* Container */
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
@@ -40,7 +40,7 @@ body {
 
 .main-photo {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
     margin-top: 20px;
     border-radius: 15px;
@@ -179,9 +179,9 @@ body {
     background-color: #2F4F2F;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Adjust Hero Section */
     .hero {
         padding: 50px 20px;
     }
@@ -230,20 +230,31 @@ body {
         background-color: #2F4F2F;
     }
 
-    /* Fix image scaling for mobile */
+    /* Adjust Main Image */
     .main-photo {
         width: 100%;
-        max-width: 400px;
-        margin-top: 20px;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
     }
 
+    /* Container Adjustments */
     .container {
         width: 100%;
         padding: 10px;
     }
 
+    /* Ensure input fields & buttons fill the width */
     .rsvp input, .rsvp button {
         width: 100%;
         padding: 12px;
+    }
+
+    /* Fix image scaling for mobile */
+    .container img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
