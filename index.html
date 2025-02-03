@@ -11,24 +11,37 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Cheryl & Edwin</h1>
-            <h2>You're Invited to Our Wedding Celebration!</h2>
+        
+            <h2>You're Invited to Our Engagement Ceremony!</h2>
+		<h1>Cheryl & Edwin</h1>
             <img src="main-photo.PNG" alt="Couple Image" class="main-photo">
         </section>
 
         <!-- Countdown Timer -->
         <section class="countdown">
-            <h1>Countdown to the Big Day</h1>
+            <h1>Let's enjoy this event in</h1>
             <p id="countdown"></p>
         </section>
 
-        <!-- Location -->
-        <section class="location">
-            <h2>Venue Details</h2>
-            <p>📍 Location: XYZ Banquet Hall, Mumbai</p>
-            <p>📅 Date: January 4, 2026</p>
-            <p>⏰ Time: 7:00 PM Onwards</p>
-        </section>
+        <!-- Location Section -->
+<section class="location">
+    <h2>Venue Details</h2>
+    <p>📍 Location: Imperial Banquets, Vashi, Navi Mumbai</p>
+    <p>📅 Date: January 4, 2026</p>
+    <p>⏰ Time: 7:00 PM Onwards</p>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Imperial+Banquets+Vashi+Navi+Mumbai" 
+       target="_blank" 
+       class="map-button">
+        📍 Get Directions
+    </a>
+    <!-- Google Maps Embed -->
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.713057592752!2d72.99973047509656!3d19.16610498205732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1253b0e3e45%3A0x6d3fcb76d7f3a16a!2sImperial%20Banquets!5e0!3m2!1sen!2sin!4v1706940562000!5m2!1sen!2sin"
+        width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+    </iframe>
+
+</section>
+
 
         <!-- RSVP Form -->
         <section class="rsvp">
@@ -38,10 +51,15 @@
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
 
                 <label for="coming">Are you coming?</label>
-                <input type="radio" id="yes" name="coming" value="Yes" required>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="coming" value="No" required>
-                <label for="no">No</label>
+<div class="radio-group">
+    <label>
+        <input type="radio" name="coming" value="Yes" required> Yes
+    </label>
+    <label>
+        <input type="radio" name="coming" value="No" required> No
+    </label>
+</div>
+                
 
                 <label for="guests">Number of Persons:</label>
                 <input type="number" id="guests" name="guests" min="1" max="10" placeholder="1" required>
@@ -53,7 +71,7 @@
 
     <script>
         // Set the date we're counting down to
-        const countDownDate = new Date("Jan 4, 2026 00:00:00").getTime();
+        const countDownDate = new Date("Aug 2, 2025 00:00:00").getTime();
 
         // Update the countdown every 1 second
         const x = setInterval(function() {
