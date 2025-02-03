@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Cheryl & Edwin</h1>
+            <h2>You're Invited to Our Wedding Celebration!</h2>
+            <img src="main-photo.PNG" alt="Couple Image" class="main-photo">
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="countdown">
+            <h1>Countdown to the Big Day</h1>
+            <p id="countdown"></p>
+        </section>
+
+        <!-- Location -->
+        <section class="location">
+            <h2>Venue Details</h2>
+            <p>📍 Location: XYZ Banquet Hall, Mumbai</p>
+            <p>📅 Date: January 4, 2026</p>
+            <p>⏰ Time: 7:00 PM Onwards</p>
+        </section>
+
+        <!-- RSVP Form -->
+        <section class="rsvp">
+            <h2>RSVP</h2>
+            <form id="rsvp-form" action="https://formspree.io/f/mldgnoza" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="coming">Are you coming?</label>
+                <input type="radio" id="yes" name="coming" value="Yes" required>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="coming" value="No" required>
+                <label for="no">No</label>
+
+                <label for="guests">Number of Persons:</label>
+                <input type="number" id="guests" name="guests" min="1" max="10" placeholder="1" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Jan 4, 2026 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Find the time difference
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result
+            document.getElementById("countdown").innerHTML = 
+                days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds ";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "The Big Day has arrived!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
