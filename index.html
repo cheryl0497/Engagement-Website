@@ -153,7 +153,25 @@
     left: 100%;
   }
 }
+.exchange-rings {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Center the image */
+  animation: fadeIn 2s ease-in-out; /* Simple fade-in animation */
+}
 
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 h5 {
 color: #5a7d6b; /* Sage green for the heading */
 
@@ -172,8 +190,10 @@ color: #5a7d6b; /* Sage green for the heading */
     <div class="invitation-card text-center">
       
       <div class="decor">💍✨</div>
-      <div class="header">You're Invited!</div>
-<div class="names">Edwin & Cheryl</div>
+      <p class="mt-3">You are invited to the engagement ceremony of Edwin and Cheryl.</p>
+
+<!-- Animated Image of Boy and Girl Exchanging Rings -->
+<img src="images/animated-exchange-rings.png" alt="Boy and Girl Exchanging Rings" class="exchange-rings">
 <!-- Engagement Image -->
 <img src="images/main-photo.png" alt="Couple Image" class="wedding-photo">
 <p class="mt-3 sparkle-text">You are invited to the engagement ceremony of Edwin and Cheryl.</p>
