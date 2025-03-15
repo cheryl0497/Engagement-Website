@@ -49,8 +49,13 @@
       font-weight: bold;
     }
 
+<<<<<<< HEAD
     .hero-content .names {
       font-size: 3rem;
+=======
+    .names {
+      font-size: 2rem;
+>>>>>>> 52aa3bdef7a0935fe9a4259523f027b193ee8d7a
       font-weight: bold;
     }
 
@@ -76,12 +81,119 @@
       color: white;
     }
 
+<<<<<<< HEAD
     .btn-directions:hover {
       background-color: #f5f5dc;
+=======
+    .venue-address {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .wedding-photo {
+      width: 250px; /* Set width to make the photo small */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 15px;
+      margin: 0 auto 20px auto;
+      display: block;
+    }
+
+.with-love {
+  font-size: 1.2rem;
+  font-style: bold;
+  color: #5a7d6b; /* Sage green */
+  margin-top: 30px;
+}
+
+.event-timeline {
+  text-align: center; /* Center-align the entire section */
+}
+
+.event-timeline h5 {
+  color: #5a7d6b; /* Sage green for the heading */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  display: inline-block; /* Keeps the list centered */
+  text-align: left; /* Keeps the text inside the list left-aligned */
+}
+
+.timeline-list li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.timeline-list li strong {
+  color: #5a7d6b; /* Sage green for the time */
+}
+
+.sparkle-text {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #5a7d6b; /* Sage green color */
+  overflow: hidden;
+}
+
+.sparkle-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 70%);
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.exchange-rings {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Center the image */
+  animation: fadeIn 2s ease-in-out; /* Simple fade-in animation */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+h5 {
+color: #5a7d6b; /* Sage green for the heading */
+
+  font-weight: bold;
+}
+    @media (max-width: 600px) {
+      .wedding-photo {
+        width: 120px; /* Adjust for smaller screens */
+      }
+>>>>>>> 52aa3bdef7a0935fe9a4259523f027b193ee8d7a
     }
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 
   <!-- Hero Section with Blended Image -->
   <section class="hero">
@@ -89,6 +201,72 @@
       <div class="header">You're Invited!</div>
       <div class="names">Edwin & Cheryl</div>
       <p>Join us for the engagement ceremony of Edwin and Cheryl.</p>
+=======
+  <div class="container">
+    <div class="invitation-card text-center">
+      
+      <div class="decor">💍✨</div>
+      <p class="names">Edwin & Cheryl</p>
+
+<!-- Animated Image of Boy and Girl Exchanging Rings -->
+
+<!-- Engagement Image -->
+<img src="images/main-photo.png" alt="Couple Image" class="wedding-photo">
+<p class="mt-3 sparkle-text">You are invited to the engagement ceremony of Edwin and Cheryl.</p>
+
+
+      <div class="details">
+        <p><strong>Date:</strong> 9th August 2025</p>
+        <p><strong>Time:</strong> 4:00 PM onwards</p>
+        <a href="https://goo.gl/maps/YourLocationLink" target="_blank" class="btn-directions">Get Directions</a>
+        <p class="venue-address"><strong>Venue:</strong> The Grand Ballroom, Dream Palace,<br>123 Celebration Street, Kalyan, India</p>
+      </div>
+
+      <div class="countdown">
+        <p>Let's enjoy this event in</p>
+        <div id="countdown-timer"></div>
+      </div>
+
+<!-- Insert the Event Timeline here -->
+<div class="event-timeline mt-4">
+  <h5>Event Timeline</h5>
+  <ul class="timeline-list text-start">
+    <li><strong>7:00 PM:</strong> Ring Exchange </li>
+    <li><strong>7:30 PM:</strong> Cocktail Hour</li>
+<li><strong>8:00 PM:</strong> Couple Dance and Games</li>
+    <li><strong>9:00 PM:</strong> Dinner is Served</li>
+    <li><strong>9:30 PM:</strong> Dance Floor Opens</li>
+    <li><strong>11:00 PM:</strong> Farewell & Closing Remarks</li>
+  </ul>
+</div>
+
+      <div class="rsvp-form">
+        <h5>RSVP</h5>
+        <form action="https://formspree.io/f/mldgnoza" method="POST">
+          <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="mb-3">
+            <select name="attendance" class="form-control" required>
+              <option value="">Will you attend?</option>
+              <option value="Yes">Yes, I will be there!</option>
+              <option value="No">Sorry, I can't make it.</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <input type="number" name="number_of_persons" class="form-control" placeholder="Number of Persons" min="1">
+          </div>
+          <button type="submit" class="btn btn-success">Submit RSVP</button>
+        </form>
+      </div>
+
+      <p class="footer">We look forward to celebrating this special day with you!</p>
+      <div class="decor">💐🎉</div>
+<p class="with-love mt-4">With love, Edwin & Cheryl 💖</p>
+>>>>>>> 52aa3bdef7a0935fe9a4259523f027b193ee8d7a
     </div>
   </section>
 
