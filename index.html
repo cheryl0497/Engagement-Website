@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,253 +7,207 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #e6f4ea;
+      background-color: #fffff0;
       color: #333;
       font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
     }
 
-    .invitation-card {
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 600px;
-      border: 2px solid #5a7d6b;
+    /* Hero Section with Blended Image */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background: url('images/main-photo.png') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .header {
+    /* Overlay effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    }
+
+    /* Text content inside the hero section */
+    .hero-content {
+      position: relative;
+      color: white;
+      max-width: 80%;
+      animation: fadeInUp 2s ease-in;
+    }
+
+    .hero-content .header {
       font-size: 2.5rem;
-      color: #5a7d6b;
-      margin-bottom: 15px;
+      font-weight: bold;
     }
 
-    .names {
+    .hero-content .names {
       font-size: 3rem;
       font-weight: bold;
-      color: #5a7d6b;
     }
 
+    /* Fade-in animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Styling for event details */
     .details {
       margin-top: 20px;
-      font-size: 1.1rem;
+      font-size: 18px;
     }
-
-    .details p {
-      margin: 5px 0;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 1rem;
-      color: #777;
-    }
-
-    .decor {
-      font-size: 3rem;
-      color: #5a7d6b;
-    }
-
-    .countdown {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #5a7d6b; /* Sage green text color */
-  margin-top: 20px;
-  background: #e6f4ea; /* Light sage green background */
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(90, 125, 107, 0.3); /* Deeper sage green shadow */
-  border: 1px solid #5a7d6b; /* Thinner sage green border */
-}
-
 
     .btn-directions {
-      margin-top: 10px;
       background-color: #5a7d6b;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
     }
 
-    .venue-address {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .wedding-photo {
-      width: 150px; /* Set width to make the photo small */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 15px;
-      margin: 0 auto 20px auto;
-      display: block;
-    }
-
-.with-love {
-  font-size: 1.2rem;
-  font-style: bold;
-  color: #5a7d6b; /* Sage green */
-  margin-top: 30px;
-}
-
-.event-timeline {
-  text-align: center; /* Center-align the entire section */
-}
-
-.event-timeline h5 {
-  color: #5a7d6b; /* Sage green for the heading */
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.timeline-list {
-  list-style: none;
-  padding: 0;
-  display: inline-block; /* Keeps the list centered */
-  text-align: left; /* Keeps the text inside the list left-aligned */
-}
-
-.timeline-list li {
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.timeline-list li strong {
-  color: #5a7d6b; /* Sage green for the time */
-}
-
-.sparkle-text {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  color: #5a7d6b; /* Sage green color */
-  overflow: hidden;
-}
-
-.sparkle-text::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 70%);
-  animation: sparkle 2s infinite;
-}
-
-@keyframes sparkle {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-h5 {
-color: #5a7d6b; /* Sage green for the heading */
-
-  font-weight: bold;
-}
-    @media (max-width: 600px) {
-      .wedding-photo {
-        width: 120px; /* Adjust for smaller screens */
-      }
+    .btn-directions:hover {
+      background-color: #f5f5dc;
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="invitation-card text-center">
-      
-      <div class="decor">💍✨</div>
+
+  <!-- Hero Section with Blended Image -->
+  <section class="hero">
+    <div class="hero-content">
       <div class="header">You're Invited!</div>
-<div class="names">Edwin & Cheryl</div>
-<!-- Engagement Image -->
-<img src="images/main-photo.png" alt="Couple Image" class="wedding-photo">
-<p class="mt-3 sparkle-text">You are invited to the engagement ceremony of Edwin and Cheryl.</p>
-
-
-      <div class="details">
-        <p><strong>Date:</strong> 9th August 2025</p>
-        <p><strong>Time:</strong> 4:00 PM onwards</p>
-        <a href="https://goo.gl/maps/YourLocationLink" target="_blank" class="btn-directions">Get Directions</a>
-        <p class="venue-address"><strong>Venue:</strong> The Grand Ballroom, Dream Palace,<br>123 Celebration Street, Kalyan, India</p>
-      </div>
-
-      <div class="countdown">
-        <p>Let's enjoy this event in</p>
-        <div id="countdown-timer"></div>
-      </div>
-
-<!-- Insert the Event Timeline here -->
-<div class="event-timeline mt-4">
-  <h5>Event Timeline</h5>
-  <ul class="timeline-list text-start">
-    <li><strong>7:00 PM:</strong> Ring Exchange </li>
-    <li><strong>7:30 PM:</strong> Cocktail Hour</li>
-<li><strong>8:00 PM:</strong> Couple Dance and Games</li>
-    <li><strong>9:00 PM:</strong> Dinner is Served</li>
-    <li><strong>9:30 PM:</strong> Dance Floor Opens</li>
-    <li><strong>11:00 PM:</strong> Farewell & Closing Remarks</li>
-  </ul>
-</div>
-
-      <div class="rsvp-form">
-        <h5>RSVP</h5>
-        <form action="https://formspree.io/f/mldgnoza" method="POST">
-          <div class="mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-          </div>
-          <div class="mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-          </div>
-          <div class="mb-3">
-            <select name="attendance" class="form-control" required>
-              <option value="">Will you attend?</option>
-              <option value="Yes">Yes, I will be there!</option>
-              <option value="No">Sorry, I can't make it.</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <input type="number" name="number_of_persons" class="form-control" placeholder="Number of Persons" min="1">
-          </div>
-          <button type="submit" class="btn btn-success">Submit RSVP</button>
-        </form>
-      </div>
-
-      <p class="footer">We look forward to celebrating this special day with you!</p>
-      <div class="decor">💐🎉</div>
-<p class="with-love mt-4">With love, Edwin & Cheryl 💖</p>
+      <div class="names">Edwin & Cheryl</div>
+      <p>Join us for the engagement ceremony of Edwin and Cheryl.</p>
     </div>
+  </section>
+
+  <div class="container text-center mt-4" style="font-family: 'Georgia', serif; color: #4b4b4b;">
+  <h6 class="text-uppercase fw-bold" style="letter-spacing: 2px;">August</h6>
+  
+  <div class="d-flex justify-content-center align-items-center">
+    <hr class="flex-grow-1 me-2" style="border-top: 1px solid #4b4b4b; width: 30%;">
+    <span class="fw-bold">Sunday</span>
+    <hr class="flex-grow-1 ms-2" style="border-top: 1px solid #4b4b4b; width: 30%;">
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Countdown Timer Script
-    const countdownDate = new Date("Aug 9, 2025 17:30:00").getTime();
+  <h1 class="display-4 fw-bold" style="font-size: 3rem;">17</h1>
+  <p class="fw-bold">2025</p>
 
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
+ 
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <div class="d-flex justify-content-center align-items-center mt-2">
+    <hr class="flex-grow-1 me-2" style="border-top: 1px solid #4b4b4b; width: 30%;">
+    <span class="fw-bold">12 PM Onwards</span>
+    <hr class="flex-grow-1 ms-2" style="border-top: 1px solid #4b4b4b; width: 30%;">
+  </div>
+ <em class="text-muted">at</em>
+  <p class="mt-3 fw-bold" style="font-size: 1.1rem;">
+    Raj Banquets, Near Roshan Petrol Pump, Kalyan West
+  </p>
+</div>
 
-      document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown-timer").innerHTML = "It's finally our Engagement Day!";
-      }
-    }, 1000);
-  </script>
-</body>
+ <!-- Event Timeline -->
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card p-4 shadow-lg text-center" 
+       style="background: rgba(255, 255, 255, 0.8); 
+              border-radius: 15px; 
+              max-width: 600px; 
+              width: 100%;">
+              
+    <h4 class="text-center mb-4" style="color: #4b4b4b;">📅 Event Timeline</h4>
 
-</html>
+    <div class="list-group">
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-right">
+        <span class="fs-4">💍</span> <strong>11:00 AM:</strong> Ring Exchange
+      </div>
+
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-left">
+        <span class="fs-4">🍸</span> <strong>12:30 PM:</strong> Snacks & Welcome Drink
+      </div>
+
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-right">
+        <span class="fs-4">💃</span> <strong>1:00 PM:</strong> Couple Dance & Games
+      </div>
+
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-left">
+        <span class="fs-4">🍽️</span> <strong>2:00 PM:</strong> Dinner is Served
+      </div>
+
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-right">
+        <span class="fs-4">🎶</span> <strong>2:00 PM:</strong> Dance Floor Opens
+      </div>
+
+      <div class="list-group-item border-0 timeline-item d-flex flex-column align-items-center" 
+           style="background: transparent; color: #4b4b4b;" 
+           data-aos="fade-left">
+        <span class="fs-4">🌞</span> <strong>3:00 PM:</strong> Farewell
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AOS Library for Animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+
+  <div class="container mt-4 d-flex justify-content-center">
+  <div class="card p-4 shadow-lg" style="background: rgba(255, 255, 255, 0.8); border-radius: 15px; max-width: 600px; width: 100%;">
+    <div class="card-body text-center">
+      <h5 class="fw-bold" style="color: #4b4b4b;">RSVP</h5>
+      <p class="text-muted">Let us know if you can make it!</p>
+
+      <form action="https://formspree.io/f/mldgnoza" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <select name="attendance" class="form-control" required>
+            <option value="">Will you attend?</option>
+            <option value="Yes">Yes, I will be there!</option>
+            <option value="No">Sorry, I can't make it.</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <input type="number" name="number_of_persons" class="form-control" placeholder="Number of Guests" min="1">
+        </div>
+        <button type="submit" class="btn btn-lg" 
+          style="background-color: #F5F5DC; color: #333; border-radius: 8px; border: none;">
+          Submit RSVP
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <p class="text-center mt-4">We look forward to celebrating this special day with you!</p>
+  <p class="text-center">💐🎉</p>
+  <p class="text-center with-love mt-4">With love, Edwin & Cheryl 💖</p>
+
+       
